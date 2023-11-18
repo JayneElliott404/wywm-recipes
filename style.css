@@ -11,6 +11,12 @@ h1 {
     margin-bottom: 75px;
 }
 
+h2 {
+    color: #4F6F52;
+    font-family: 'figtree', serif;
+    margin-top:40px;
+}
+
 p {
     font-family: 'figtree', serif;
     font-size: 1.4rem;
@@ -18,11 +24,12 @@ p {
 }
 
 button {
-    transition: background-color 0.5s;
     background-color: rgb(193, 189, 189);
     border-radius: 10px;
     font-size: 0.9rem;
     height: 34px;
+    margin-left: 10px;
+    transition: background-color 0.5s;
     width: 80px;
 }
 
@@ -48,6 +55,28 @@ input:hover {
     background-color: #f5f2e8;
 }
 
+table {
+    border: 3px solid black;
+    border-collapse: separate;
+    border-radius: 10px;
+    border-spacing: 0;
+    font-family: 'figtree', serif;
+    font-size: 1.4rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+}
+
+tr, td {
+    border: 1px solid black;
+}
+
+#responseDiv {
+    align-items: center;
+    background-color: #f7faef;
+    position: relative;    
+}
+
 .container {
     position: relative;
     height: 100vh;
@@ -69,4 +98,13 @@ input:hover {
 
 .content {
     position: relative;
+}
+
+.hint {
+    font-size: 1.2rem;
+}
+
+.nutritionalTitle {
+    font-size: 4rem;
+    font-weight: 300;
 }

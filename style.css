@@ -14,7 +14,7 @@ h1 {
 h2 {
     color: #4F6F52;
     font-family: 'figtree', serif;
-    margin-top:40px;
+    margin-top: 45px;
 }
 
 p {
@@ -55,6 +55,10 @@ input:hover {
     background-color: #f5f2e8;
 }
 
+img {
+    margin-bottom: 12px;
+}
+
 table {
     border: 3px solid black;
     border-collapse: separate;
@@ -67,33 +71,44 @@ table {
     width: 300px;
 }
 
-tr, td {
+tr,
+td {
     border: 1px solid black;
+}
+
+#footer {
+    background-color: #f8f9f6;
+    padding: 10px;
+}
+
+#footer>p {
+    font-size: 1rem;
+    margin: 0;
 }
 
 #responseDiv {
     align-items: center;
-    background-color: #f7faef;
-    position: relative;    
+    background-color: #f8f9f6;
+    position: relative;
 }
 
 .container {
-    position: relative;
-    height: 100vh;
-    width: 100%;
     align-items: center;
+    height: 100vh;
+    position: relative;
+    width: 100%;
 }
 
 .container::before {
-    content: "";
     background-image: url(background-image.png);
     background-size: cover;
+    content: "";
+    opacity: 0.09;
     position: absolute;
     top: 0px;
     right: 0px;
     bottom: 0px;
     left: 0px;
-    opacity: 0.09;
 }
 
 .content {
@@ -104,7 +119,17 @@ tr, td {
     font-size: 1.2rem;
 }
 
+.left-align {
+    padding: 4px;
+    text-align: left;
+}
+
 .nutritionalTitle {
-    font-size: 4rem;
+    font-size: 3rem;
     font-weight: 300;
+}
+
+.right-align {
+    padding: 4px;
+    text-align: right;
 }

@@ -1,29 +1,32 @@
+// API endpoints
 const recipeUrl = "https://api.edamam.com/api/recipes/v2?app_id=c020ed14&app_key=966338ac1fe900cc58ead0ba64203c79&type=public&q="
+const mealTypeUrl = "https://api.edamam.com/api/recipes/v2?app_id=c020ed14&app_key=966338ac1fe900cc58ead0ba64203c79&type=public&dishType=Main%20course&random=true&mealType="
 const nutritionUrl = "https://api.edamam.com/api/nutrition-data?app_id=27020b61&app_key=d38a0752cb2f5698ec1559bda78543c8&ingr="
 
-// Retrieves recipe information from the API and passes it back to the website
+// Retrieves recipe information from the API and updates the page
 async function getRecipes() {
     try {
         const ingredient = document.getElementById("ingredientSearch").value
         const recipes = await getResponseFromApi(recipeUrl, ingredient)
-        const responseSection = document.getElementById("responseDiv")
-        responseSection.innerHTML = ""
-
-        if (recipes.count === 0) {
-            responseSection.innerHTML = "<h2>No entry found. Please try again</h2>"
-        } else {
-            for (let i = 0; i < recipes.hits.length; i++) {
-                responseSection.innerHTML += `<h2>${recipes.hits[i].recipe.label}</h2>`
-                responseSection.innerHTML += `<div><img src="${recipes.hits[i].recipe.images.SMALL.url}" alt="recipe photo"></div>`
-                responseSection.innerHTML += `<a href="${recipes.hits[i].recipe.url}">Click here for the recipe</a>`
-            }
-        }
+        displayRecipe(recipes)
     } catch (err) {
+        // If any errors with API or html update, log error to console
         console.error(err)
     }
 }
 
-// Retrieves nutrition information from the API and passes it back to the website
+async function getMealType(mealType) {
+    try {
+        const mealTypeRecipes = await getResponseFromApi(mealTypeUrl, mealType)
+        displayRecipe(mealTypeRecipes)
+    } catch (err) {
+        // If any errors with API or html update, log error to console
+        console.error(err)
+    }
+}
+
+
+// Retrieves nutrition information from the API and updates the page
 async function getNutrition() {
     try {
         const ingredient = document.getElementById("nutritionSearch").value
@@ -31,7 +34,9 @@ async function getNutrition() {
         const responseSection = document.getElementById("responseDiv")
         responseSection.innerHTML = ""
 
-        if (nutrition.calories === 0) {
+        // If response has a total weight of zero then return message
+        // otherwise populate nutrition table
+        if (nutrition.totalWeight === 0) {
             responseSection.innerHTML = "<h2>No entry found. Please try again</h2>"
         } else {
             responseSection.innerHTML = `
@@ -61,12 +66,32 @@ async function getNutrition() {
             </table>`
         }
     } catch (err) {
+        // If any errors with API or html update, log error to console
         console.error(err)
     }
 }
 
-async function getResponseFromApi(url, ingredient) {
-    const response = await fetch(`${url}${ingredient}`)
+function displayRecipe(recipes) {
+    const responseSection = document.getElementById("responseDiv")
+    responseSection.innerHTML = ""
+
+    // If no matching recipes are found then return message 
+    // otherwise loop through recipes and insert into the div
+
+    if (recipes.count === 0) {
+        responseSection.innerHTML = "<h2>No entry found. Please try again</h2>"
+    } else {
+        for (let i = 0; i < recipes.hits.length; i++) {
+            responseSection.innerHTML += `<h2>${recipes.hits[i].recipe.label}</h2>`
+            responseSection.innerHTML += `<div><img src="${recipes.hits[i].recipe.images.SMALL.url}" alt="recipe photo"></div>`
+            responseSection.innerHTML += `<p class="links"><a href="${recipes.hits[i].recipe.url}">Click here for the recipe</a></p>`
+        }
+    }
+}
+
+// Reusable function to call APIs and return response as JSON
+async function getResponseFromApi(url, param) {
+    const response = await fetch(`${url}${param}`)
     const data = await response.json()
     return data
 }

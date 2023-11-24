@@ -8,23 +8,25 @@ h1 {
     font-size: 7rem;
     font-weight: 300;
     margin-top: 0;
-    margin-bottom: 75px;
+    margin-bottom: 65px;
 }
 
 h2 {
     color: #4F6F52;
     font-family: 'figtree', serif;
     margin-top: 45px;
+    padding: 15px;
 }
 
 p {
     font-family: 'figtree', serif;
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     font-weight: 500;
+    margin-top: 5px;
 }
 
 button {
-    background-color: rgb(193, 189, 189);
+    background-color: rgb(210, 207, 207);
     border-radius: 10px;
     font-size: 0.9rem;
     height: 34px;
@@ -41,7 +43,7 @@ input[type="text"] {
     border: 3px solid black;
     border-radius: 10px;
     font-family: 'figtree', serif;
-    margin-bottom: 50px;
+    /* margin-bottom: 50px; */
     padding: 10px 40px 10px 40px;
     text-align: center;
     width: 300px;
@@ -76,14 +78,30 @@ td {
     border: 1px solid black;
 }
 
+#breakfast {
+    background-color: #DBFEB8;
+}
+
+#dinner {
+    background-color: #99C2A2;
+}
+
 #footer {
     background-color: #f8f9f6;
-    padding: 10px;
+    padding: 15px;
 }
 
 #footer>p {
     font-size: 1rem;
     margin: 0;
+}
+
+#ingredientSearch, #nutritionSearch {
+    margin-bottom: 30px;
+}
+
+#lunch {
+    background-color: #C5EDAC;
 }
 
 #responseDiv {
@@ -122,6 +140,15 @@ td {
 .left-align {
     padding: 4px;
     text-align: left;
+}
+
+.links {
+    font-size: 1rem;
+    margin-bottom: 0px;
+}
+
+.mealType {
+    margin: 0px 12px 30px;
 }
 
 .nutritionalTitle {

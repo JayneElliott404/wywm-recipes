@@ -18,13 +18,21 @@
             <h1>Recipe Radar</h1>
 
             <div>
-                <p>Use this search to find recipes based on an ingredient</p>
+                <p><strong>Use this search to find random meals</strong></p>
+                <button type="button" class="mealType"" id="breakfast" onclick="getMealType('breakfast')">Breakfast</button>
+                <button type="button" class="mealType" id="lunch" onclick="getMealType('lunch')">Lunch</button>
+                <button type="button" class="mealType" id="dinner" onclick="getMealType('dinner')">Dinner</button>
+            </div>
+            <div>
+                <p><strong>Use this search to find recipes based on an ingredient</strong></p>
                 <input type="text" id="ingredientSearch" placeholder="Enter your ingredient here">
                 <button type="button" onclick="getRecipes()">Submit</button>
+
             </div>
 
             <div>
-                <p>Use this search to find nutritional information based on an ingredient</p>
+                <p><strong>Use this search to find nutritional information based on the weight of an ingredient</strong>
+                </p>
                 <p class="hint"><em>for example, 100g cooked rice</em></p>
                 <input type="text" id="nutritionSearch" placeholder="Enter your ingredient here">
                 <button type="button" onclick="getNutrition()">Submit</button>
@@ -35,11 +43,12 @@
             </div>
             <footer id="footer">
                 <p>Jayne Elliott<br>
-                ©️ 2023</p>
-              </footer>
-        </div>                                                                                  
+                    ©️ 2023</p>
+            </footer>
+        </div>
     </div>
 
     <script src="index.js"></script>
 </body>
+
 </html>

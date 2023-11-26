@@ -39,11 +39,20 @@ button:hover {
     background-color: #739072;
 }
 
+footer {
+    background-color: #f8f9f6;
+    padding: 15px;
+}
+
+footer > p {
+    font-size: 1rem;
+    margin: 0;
+}
+
 input[type="text"] {
     border: 3px solid black;
     border-radius: 10px;
     font-family: 'figtree', serif;
-    /* margin-bottom: 50px; */
     padding: 10px 40px 10px 40px;
     text-align: center;
     width: 300px;
@@ -82,26 +91,16 @@ td {
     background-color: #DBFEB8;
 }
 
+#dinner {
+    background-color: #bce5a3;
+}
+
 #snack {
     background-color: #99C2A2;
 }
 
-#footer {
-    background-color: #f8f9f6;
-    padding: 15px;
-}
-
-#footer>p {
-    font-size: 1rem;
-    margin: 0;
-}
-
 #ingredientSearch, #nutritionSearch {
     margin-bottom: 30px;
-}
-
-#dinner {
-    background-color: #bce5a3;
 }
 
 #responseDiv {
@@ -142,21 +141,21 @@ td {
     text-align: left;
 }
 
+.right-align {
+    padding: 4px;
+    text-align: right;
+}
+
 .links {
     font-size: 1rem;
     margin-bottom: 0px;
 }
 
-.mealType {
+.mealTypeButton {
     margin: 0px 12px 30px;
 }
 
-.nutritionalTitle {
+.nutritionTitle {
     font-size: 3rem;
     font-weight: 300;
-}
-
-.right-align {
-    padding: 4px;
-    text-align: right;
 }

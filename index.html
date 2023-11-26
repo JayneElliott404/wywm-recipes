@@ -5,12 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recipe and nutrition finder</title>
-    <link rel="stylesheet" href="style.css">
     <link rel="icon" href="food-icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@500&family=Pacifico&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -18,31 +18,36 @@
         <div class="content">
             <h1>Recipe Radar</h1>
 
+            <!-- Feature 1 -->
             <div>
                 <p><strong>Use this search to find random recipes</strong></p>
-                <button type="button" class="mealType"" id="breakfast" onclick="getMealType('breakfast')">Breakfast</button>
-                <button type="button" class="mealType" id="dinner" onclick="getMealType('dinner')">Dinner</button>
-                <button type="button" class="mealType" id="snack" onclick="getMealType('snack')">Snack</button>
+                <button type="button" class="mealTypeButton" id="breakfast"
+                    onclick="getRecipesByMealType('breakfast')">Breakfast</button>
+                <button type="button" class="mealTypeButton" id="dinner"
+                    onclick="getRecipesByMealType('dinner')">Dinner</button>
+                <button type="button" class="mealTypeButton" id="snack" onclick="getRecipesByMealType('snack')">Snack</button>
             </div>
+
+            <!-- Feature 2 -->
             <div>
                 <p><strong>Use this search to find recipes based on an ingredient</strong></p>
                 <input type="text" id="ingredientSearch" placeholder="Enter your ingredient here">
                 <button type="button" onclick="getRecipes()">Submit</button>
-
             </div>
 
+            <!-- Feature 3 -->
             <div>
                 <p><strong>Use this search to find nutritional information based on the weight of an ingredient</strong>
                 </p>
-                <p class="hint"><em>for example, 100g cooked rice</em></p>
+                <p class="hint"><em>For example, 100g cooked rice</em></p>
                 <input type="text" id="nutritionSearch" placeholder="Enter your ingredient here">
                 <button type="button" onclick="getNutrition()">Submit</button>
             </div>
 
             <div id="responseDiv">
-
             </div>
-            <footer id="footer">
+
+            <footer>
                 <p>Jayne Elliott<br>
                     ©️ 2023</p>
             </footer>
